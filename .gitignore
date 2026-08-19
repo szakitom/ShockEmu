@@ -209,3 +209,10 @@ dmypy.json
 # Ignore all files generated after a successful build
 iohid_wrap.dylib
 mapKeys.h
+# Patched local copy created by resign.sh
+RemotePlay-ShockEmu.app/
+iohid_wrap.dylib
+mapKeys.h
+gpad-daemon
+mapMeta.h
+example_gyro.se

@@ -28,4 +28,20 @@ mouseLook.type = linear # 1:1 translation mode, no curve
 mouseLook.stick = right
 mouseLook.multY = -1 # Flips the Y axis for mouseLook
 mouseLook.deadZone = .05 # Sets the dead zone for the joystick
-mouseLook.decay = 5 # What the joystick movement is divided by at each tick (probably does very little)
+mouseLook.sensitivity = .15 # How quickly the stick reaches full deflection. Higher = snappier
+                            # response; it does NOT change how far you turn.
+mouseLook.drain = 400 # THE knob for how far you turn: pixels consumed per second of full
+                      # stick. LOWER = more rotation per swipe. Total rotation works out to
+                      # (pixels moved / drain) seconds of stick, so a quick swipe and a slow
+                      # swipe covering the same distance turn the same amount -- up to maxGlide.
+mouseLook.maxGlide = .1 # Seconds the view may keep turning after you lift your finger. The stick
+                        # cannot turn faster than the console allows, so a swipe quicker than that
+                        # limit banks up motion; this caps the bank. Raise for more distance
+                        # fidelity on fast swipes, lower for a more immediate stop.
+mouseLook.captureMode = recenter # 'lock' pins the pointer (best for a real mouse). Switch to 'recenter'
+                             # if capture works but nothing moves -- trackpads only report motion
+                             # when the pointer actually moves, so recenter lets it move and warps
+                             # it back to the middle before it can leave the window.
+mouseLook.captureKey = 0 # Press to lock the pointer to the window; press again to release.
+                              # Without capture the cursor wanders out of the window and look stops
+                              # dead. Capture also releases itself whenever the app loses focus.
